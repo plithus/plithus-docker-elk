@@ -5,8 +5,8 @@
 cluster.name: elk-cluster
 node.name: ${ELASTICSEARCH_NODE_NAME:-elasticsearch}
 network.host: ["_local_", "_site_"]
-discovery.seed_hosts: ["_local_"]
-#cluster.initial_master_nodes: ["elk-node-01"]
+discovery.seed_hosts: ["elk-node-01", "elk-node-02"]
+cluster.initial_master_nodes: ["elk-node-01", "elk-node-02"]  #Do not configure this setting on nodes that are joining an existing cluster or restarting.
 
 ## X-Pack settings
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/security-settings.html
