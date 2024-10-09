@@ -13,3 +13,9 @@ cluster.initial_master_nodes: ["elk-node-01", "elk-node-02"]  # Do not configure
 #
 xpack.license.self_generated.type: trial
 xpack.security.enabled: true
+
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate
+xpack.security.transport.ssl.client_authentication: required
+xpack.security.transport.ssl.keystore.path: elastic-certificates.p12
+xpack.security.transport.ssl.truststore.path: elastic-certificates.p12
