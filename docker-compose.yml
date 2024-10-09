@@ -50,7 +50,6 @@ services:
       - elasticsearch:/usr/share/elasticsearch/data:Z
       - ./elasticsearch/config/elastic-certificates.p12:/usr/share/elasticsearch/config/elastic-certificates.p12:ro,Z
       - ./elasticsearch/config/elastic-stack-ca.p12:/usr/share/elasticsearch/config/elastic-stack-ca.p12:ro,Z
-      - ./elasticsearch/config/elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore:Z
     ports:
       - 9200:9200
       - 9300:9300
