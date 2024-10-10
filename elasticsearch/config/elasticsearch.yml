@@ -3,7 +3,6 @@
 ## https://github.com/elastic/elasticsearch/blob/main/distribution/docker/src/docker/config/elasticsearch.yml
 #
 cluster.name: elk-cluster
-node.name: ${ELASTICSEARCH_NODE_NAME:-elasticsearch}
 network.host: ["_local_", "_site_"]
 discovery.seed_hosts: ["elk-node-01", "elk-node-02"]
 cluster.initial_master_nodes: ["elk-node-01", "elk-node-02"]  # Do not configure this setting on nodes that are joining an existing cluster or restarting.
