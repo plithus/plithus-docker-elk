@@ -47,6 +47,7 @@ services:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
+      - ./elasticsearch/config/elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore:ro,Z
       - elasticsearch:/usr/share/elasticsearch/data:Z
       - ./elasticsearch/config/elastic-certificates.p12:/usr/share/elasticsearch/config/elastic-certificates.p12:ro,Z
       - ./elasticsearch/config/elastic-stack-ca.p12:/usr/share/elasticsearch/config/elastic-stack-ca.p12:ro,Z
@@ -54,7 +55,7 @@ services:
       - 9200:9200
       - 9300:9300
     environment:
-      node.name: elasticsearch
+      node.name: ${ELASTICSEARCH_NODE_NAME:-elasticsearch}
       ES_JAVA_OPTS: -Xms512m -Xmx512m
       # Bootstrap password.
       # Used to initialize the keystore during the initial startup of
@@ -64,6 +65,8 @@ services:
       # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 #      discovery.type: single-node
       ELASTICSEARCH_NODE_NAME: ${ELASTICSEARCH_NODE_NAME:-elasticsearch}
+      KEYSTORE_PASSWORD: ${KEYSTORE_PASSWORD:-}
+      TRUSTSTORE_PASSWORD: ${TRUSTSTORE_PASSWORD:-}
     networks:
       - elk
     restart: unless-stopped
