@@ -72,6 +72,7 @@ services:
     extra_hosts:
       - "elastic-1=172.31.28.70"
       - "elastic-2=172.31.6.184"
+      - "elastic-3=172.31.4.99"
     restart: unless-stopped
 
   logstash:
