@@ -69,6 +69,9 @@ services:
       TRUSTSTORE_PASSWORD: ${TRUSTSTORE_PASSWORD:-}
     networks:
       - elk
+    extra_hosts:
+      - "elastic-1=172.31.28.70"
+      - "elastic-2=172.31.6.184"
     restart: unless-stopped
 
   logstash:
