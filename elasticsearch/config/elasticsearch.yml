@@ -9,6 +9,8 @@ network.publish_host: "elastic-1"
 discovery.seed_hosts: ["elastic-1", "elastic-2", "elastic-3"]
   #cluster.initial_master_nodes: ["node-1", "node-2"]  # Do not configure this setting on nodes that are joining an existing cluster or restarting.
 
+node.roles: ["master", "data"]
+
 ## X-Pack settings
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/security-settings.html
 #
