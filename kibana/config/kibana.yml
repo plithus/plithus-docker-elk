@@ -30,6 +30,7 @@ xpack.security.encryptionKey: ${KIBANA_ENCRYPTION_KEY}
 #xpack.encryptedSavedObjects.encryptionKey:
 #xpack.reporting.encryptionKey:
 xpack.security.secureCookies: true
+xpack.security.sameSiteCookies: "None"  # for sharing Kibana dashboard on a web site(iframe)
 
 ## Fleet
 ## https://www.elastic.co/guide/en/kibana/current/fleet-settings-kb.html
